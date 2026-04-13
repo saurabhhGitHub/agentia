@@ -153,6 +153,16 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>Service</label>
+    <nameField>
+        <displayFormat>S-{00000}</displayFormat>
+        <label>Service Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Services</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
     <fields>
         <fullName>Booking_Slot__c</fullName>
         <label>Booking Slot</label>
@@ -267,14 +277,4 @@
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
-    <label>Service</label>
-    <nameField>
-        <displayFormat>S-{00000}</displayFormat>
-        <label>Service Name</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Services</pluralLabel>
-    <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
-    <visibility>Public</visibility>
 </CustomObject>

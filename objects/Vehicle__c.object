@@ -153,6 +153,16 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <label>Vehicle</label>
+    <nameField>
+        <displayFormat>V-{0000}</displayFormat>
+        <label>Vehical Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Vehicles</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
     <fields>
         <fullName>Brand__c</fullName>
         <externalId>false</externalId>
@@ -212,14 +222,4 @@
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
-    <label>Vehicle</label>
-    <nameField>
-        <displayFormat>V-{0000}</displayFormat>
-        <label>Vehical Name</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Vehicles</pluralLabel>
-    <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
-    <visibility>Public</visibility>
 </CustomObject>
