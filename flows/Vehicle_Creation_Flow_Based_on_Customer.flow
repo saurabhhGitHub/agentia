@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assignment_1</name>
+        <label>Output Detail Assignment</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>OutputDetail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Your vehicle details have been successfully registered with Brand: {!Get_Vehicle_Detail.Brand__c}, Model: {!Get_Vehicle_Detail.Model__c}, and Registration Number: {!Get_Vehicle_Detail.Registration_Number__c}.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Flow to create vehicles when the customer exists.</description>
+    <environments>Default</environments>
+    <interviewLabel>Vehicle Creation Flow Based on Customer {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Vehicle Creation Flow Based on Customer</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Records_1</name>
+        <label>Create Vehicle record</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <connector>
+            <targetReference>Get_Vehicle_Detail</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Brand__c</field>
+            <value>
+                <elementReference>Brand</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Model__c</field>
+            <value>
+                <elementReference>Model</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Registration_Number__c</field>
+            <value>
+                <elementReference>RegistrationNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Vehicle_Owner__c</field>
+            <value>
+                <elementReference>Get_Customer_Details.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Vehicle__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Customer_Details</name>
+        <label>Get Customer Details</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Records_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>EmailAddress</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Vehicle_Detail</name>
+        <label>Get Vehicle Detail</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assignment_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Create_Records_1</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Vehicle__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Customer_Details</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>To store the brand of vehicle</description>
+        <name>Brand</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>To store the email address of the customer</description>
+        <name>EmailAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>To store model of the vehicle</description>
+        <name>Model</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>To store output details of the vehicle</description>
+        <name>OutputDetail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>To store the registration number of the vehicle</description>
+        <name>RegistrationNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

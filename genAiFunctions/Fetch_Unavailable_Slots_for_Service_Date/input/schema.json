@@ -1,0 +1,14 @@
+{
+  "required" : [ "ServiceDate" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "ServiceDate" : {
+      "title" : "ServiceDate",
+      "description" : "Service Date on which the customer wants to select the service",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

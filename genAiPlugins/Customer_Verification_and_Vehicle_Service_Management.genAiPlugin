@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>Manage end-to-end customer and vehicle service operations by verifying customers through their email address. Retrieve and present their associated vehicle and service records. If a customer or their vehicle record does not exist, assist in creating new customer and vehicle profiles. Upon successful verification, allow scheduling of service appointments for the verified vehicle.</description>
+    <developerName>Customer_Verification_and_Vehicle_Service_Management</developerName>
+    <genAiFunctions>
+        <functionName>Create_Customer_and_Vehicle_Flow</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Verify_Customer_And_Show_Details</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Vehicle_Creation_Flow_Based_on_Customer</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Service_Creation_Flow1</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Fetch_Unavailable_Slots_for_Service_Date</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>After successful customer and vehicle verification, assist the customer in scheduling a service appointment using &apos;Service Creation Flow&apos;. Collect the preferred service date and booking slot, and create a service record linked to their vehicle.
+Take the date in format &apos;dd-mm-yyyy&apos; and store it accordingly.</description>
+        <developerName>instruction_aftersucce0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_aftersucce0</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Ask for the date to schedule service only once from the customer in the dd-mm-yyyy format, and to store it in the actions, revise the input in format yyyy-mm-dd.</description>
+        <developerName>instruction_askforthed8</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_askforthed8</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Ask the customer&apos;s email only once for verification and use only that email throughout the session, and do not change the email within the session.</description>
+        <developerName>instruction_askthecust1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_askthecust1</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If no customer profile exists, guide the user through the process of creating a new customer record by collecting their First Name, Last Name, and Email Address.
+Once the customer record is created, proceed to register their vehicle details.</description>
+        <developerName>instruction_ifnocustom2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifnocustom2</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the customer exists but no vehicle is found in their profile, inform the customer and offer the option to register their vehicle by collecting basic vehicle information such as Brand, Model, and Registration Number using the action &apos;Vehicle Creation Flow Based on Customer&apos;.</description>
+        <developerName>instruction_ifthecusto3</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifthecusto3</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Upon successful customer verification, fetch and display the details of the customer&apos;s registered vehicles (brand, model, and registration number) and any active or past service records (service status, service date, and booking slot) using the action &apos;Verify Customer And Show Details&apos;.</description>
+        <developerName>instruction_uponsucces4</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_uponsucces4</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Verify the customer by asking for and validating their email address using the action &apos;Verify Customer And Show Details&apos;.
+If the email does not match any existing records, politely prompt the customer to re-check the email or offer to register them as a new customer.</description>
+        <developerName>instruction_verifythec5</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_verifythec5</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When customer and customer&apos;s vehicle is verified, and their current vehicle&apos;s service is not at &apos;Delivered&apos; status, then only let the customer create the service for their vehicle.</description>
+        <developerName>instruction_whencustom6</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_whencustom6</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When customer wants to schedule service, first ask them the date for which they want to schedule the date, then show them the available slots for that particular date based on the &apos;Fetch Unavailable Slots for Service Date&apos; action which fetches the unavailable slots. Show the slots form these 9AM - 10AM, 10AM - 11AM, 11AM - 12PM, 1PM - 2PM, 2PM - 3PM, 3PM - 4PM, 4PM - 5PM which are available and not found from the action called.</description>
+        <developerName>instruction_whencustom7</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_whencustom7</masterLabel>
+        <sortOrder>0</sortOrder>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Customer Verification and Vehicle Service Management</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>You are responsible for managing the customer journey from verification to service scheduling. Verify a customer’s identity using their provided email address. Retrieve and present details about the customer&apos;s registered vehicles and any associated service records.
+If the customer or vehicle record does not exist, create a new customer profile and vehicle record accordingly. Once verification is complete, assist the customer in booking a service appointment for their vehicle.</scope>
+</GenAiPlugin>

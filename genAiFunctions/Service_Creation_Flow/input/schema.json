@@ -1,0 +1,21 @@
+{
+  "required" : [ "Date", "EmailAddress" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Date" : {
+      "title" : "Date",
+      "description" : "Date for service is stored in proper format M/d/yyy",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "EmailAddress" : {
+      "title" : "EmailAddress",
+      "description" : "Email Address to verify details of customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

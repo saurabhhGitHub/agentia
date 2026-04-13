@@ -1,0 +1,35 @@
+{
+  "required" : [ "Brand", "EmailAddress", "Model", "RegistrationNumber" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Brand" : {
+      "title" : "Brand",
+      "description" : "To store the brand of vehicle",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "EmailAddress" : {
+      "title" : "EmailAddress",
+      "description" : "To store the email address of the customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "Model" : {
+      "title" : "Model",
+      "description" : "To store model of the vehicle",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "RegistrationNumber" : {
+      "title" : "RegistrationNumber",
+      "description" : "To store the registration number of the vehicle",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

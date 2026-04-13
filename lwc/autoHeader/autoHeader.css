@@ -1,0 +1,21 @@
+.header-container {
+    background-color: #1a1a1a;
+    color: white;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-img {
+    height: 40px;
+    max-width: 150px;
+}
+
+.nav-list .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+}
+
+.nav-list .nav-link:hover {
+    color: #ff6f61;
+}

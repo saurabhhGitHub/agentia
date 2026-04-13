@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- A1 Auto Services Group --></label>
+        <name>A1_Auto_Services_Group</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Developer Edition --></label>
+        <name>Get_Started_with_Agentforce</name>
+    </customApplications>
+    <customLabels>
+        <label><!-- Hero Description Part 1 --></label>
+        <name>Agentforce_Hero_Desc</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Hero Description Part 2 --></label>
+        <name>Agentforce_Hero_Desc_Cont</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Launch Card Action --></label>
+        <name>Agentforce_Launch_Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Launch Card Description --></label>
+        <name>Agentforce_Launch_Description</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Launch Card Title --></label>
+        <name>Agentforce_Launch_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Learn Card Action --></label>
+        <name>Agentforce_Learn_Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Learn Card Description --></label>
+        <name>Agentforce_Learn_Description</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Learn Card Title --></label>
+        <name>Agentforce_Learn_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Practice Card Action --></label>
+        <name>Agentforce_Practice_Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Practice Card Description --></label>
+        <name>Agentforce_Practice_Description</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Practice Card Title --></label>
+        <name>Agentforce_Practice_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Welcome Hero Title --></label>
+        <name>Agentforce_Welcome_Title</name>
+    </customLabels>
+    <customTabs>
+        <label><!-- Welcome --></label>
+        <name>Welcome</name>
+    </customTabs>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Create_Customer_and_Vehicle_Flow</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Fetch_Unavailable_Slots_for_Service_Date</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Find_Customer_and_Vehicle</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Omni_Channel_Flow_to_Route_Agent</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Service_Creation_Flow</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Vehicle_Creation_Flow_Based_on_Customer</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>Verify_Customer_And_Show_Details</fullName>
+    </flowDefinitions>
+    <quickActions>
+        <label><!-- Guest Community Case --></label>
+        <name>GuestCommunityCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Community Case --></label>
+        <name>NewCommunityCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+</Translations>

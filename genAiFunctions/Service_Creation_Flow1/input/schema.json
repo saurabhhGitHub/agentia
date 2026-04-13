@@ -1,0 +1,28 @@
+{
+  "required" : [ "BookingSlot", "Date", "EmailAddress" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "BookingSlot" : {
+      "title" : "BookingSlot",
+      "description" : "Booking Slot will be auto-populated by the agent based on input from customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Date" : {
+      "title" : "Date",
+      "description" : "Date for service is stored",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "EmailAddress" : {
+      "title" : "EmailAddress",
+      "description" : "Email Address to verify details of customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

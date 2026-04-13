@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Get_the_UnAvailable_Slots_for_Service</name>
+        <label>Get the UnAvailable Slots for Service</label>
+        <locationX>156</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>UnavailableSlots</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>All_Service_Slots_Not_Available.Booking_Slot__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>All_Service_Slots_Not_Available</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>When_No_Slot_is_booked</name>
+        <label>When No Slot is booked</label>
+        <locationX>284</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>UnavailableSlots</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>All slots are available.</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Slots_booked_or_not</name>
+        <label>Slots booked or not?</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>When_No_Slot_is_booked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Service_Booking_Slots</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>All_Service_Slots_Not_Available</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Flow to fetch the unavailable slots based on the service date.</description>
+    <environments>Default</environments>
+    <interviewLabel>Fetch Unavailable Slots for Service Date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Fetch Unavailable Slots for Service Date</label>
+    <loops>
+        <name>All_Service_Slots_Not_Available</name>
+        <label>All Service Slots Not Available</label>
+        <locationX>68</locationX>
+        <locationY>350</locationY>
+        <collectionReference>Get_Service_Booking_Slots</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_the_UnAvailable_Slots_for_Service</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Service_Booking_Slots</name>
+        <label>Get Service Booking Slots</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Slots_booked_or_not</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Service_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ServiceDate</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Service__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Service_Booking_Slots</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Service Date on which the customer wants to select the service</description>
+        <name>ServiceDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>To store the slots for service booking which are unavailable</description>
+        <name>UnavailableSlots</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

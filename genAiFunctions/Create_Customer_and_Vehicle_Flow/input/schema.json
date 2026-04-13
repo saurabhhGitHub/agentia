@@ -1,0 +1,49 @@
+{
+  "required" : [ "Brand", "EmailAddress", "FirstName", "LastName", "Model", "RegistrationNumber" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Brand" : {
+      "title" : "Brand",
+      "description" : "Name of the brand is stored",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "EmailAddress" : {
+      "title" : "EmailAddress",
+      "description" : "To store email address of the customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "FirstName" : {
+      "title" : "FirstName",
+      "description" : "To store the first name of customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "LastName" : {
+      "title" : "LastName",
+      "description" : "To store the last name of customer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "Model" : {
+      "title" : "Model",
+      "description" : "To store Model of the vehicle",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "RegistrationNumber" : {
+      "title" : "RegistrationNumber",
+      "description" : "To store the registration number of vehicle",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

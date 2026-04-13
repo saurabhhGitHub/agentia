@@ -1,0 +1,14 @@
+{
+  "required" : [ "emailId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "emailId" : {
+      "title" : "emailId",
+      "description" : "Store the email address of the customer to verify its details.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

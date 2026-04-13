@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalExperienceConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>ESW_AF_Deployment_1745843145841</label>
+    <site>
+        <urlPathPrefix>ESWAFDeployment1745843145841</urlPathPrefix>
+    </site>
+    <space>site/ESW_AF_Deployment_17458431458411</space>
+</DigitalExperienceConfig>
